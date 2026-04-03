@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="La Magia del Barbero es una barber铆a profesional ubicada en Andahuaylas, Per煤. Ofrecemos cortes modernos y cl谩sicos para ni帽os, j贸venes y adultos, arreglo de barba, colorimetr铆a y tratamientos faciales. Vive una experiencia de barber铆a premium con atenci贸n personalizada y estilo.">
+<meta name="description" content="La Magia del Barbero es una barbería profesional ubicada en Andahuaylas, Perú. Ofrecemos cortes modernos y clásicos para niños, jóvenes y adultos, arreglo de barba, colorimetría y tratamientos faciales. Vive una experiencia de barbería premium con atención personalizada y estilo.">
 <meta name="author" content="BerMatMods - Desarrollo Web">
-<!-- 鉁� ETIQUETA DE VERIFICACI脫N DE GOOGLE SEARCH CONSOLE -->
+<!-- ✅ ETIQUETA DE VERIFICACIÓN DE GOOGLE SEARCH CONSOLE -->
 <meta name="google-site-verification" content="3Pdw4vyBTwfjLfXs2dChU8HbbPvddz1rqs4UmOEBe9w" />
-<title>La magia del barbero |Kennedy Ramirez</title>
+<title>La magia del barbero | Barbería Premium</title>
 
 <!-- ICONO DE LA PAGINA -->
 <link rel="icon" type="image/png" href="https://i.postimg.cc/25vB9Z3y/17749596456a35.png">
@@ -181,6 +181,17 @@
       background: var(--gold);
       color: var(--black);
     }
+    .btn-admin {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--black);
+      font-weight: 800;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+    }
+    .btn-admin:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.7);
+    }
 
     /* SECTIONS */
     section { padding: 60px 0; }
@@ -219,19 +230,19 @@
     }
     .service-image {
       width: 100%;
-      height: 160px; /* REDUCED from 180px */
+      height: 160px;
       object-fit: cover;
     }
-    .service-content { padding: 16px; } /* REDUCED from 20px */
+    .service-content { padding: 16px; }
     .service-card h3 {
-      font-size: 1rem; /* REDUCED from 1.1rem */
+      font-size: 1rem;
       margin-bottom: 6px;
       text-transform: uppercase;
       color: var(--white);
     }
     .service-description {
       color: var(--gray-light);
-      font-size: 0.8rem; /* REDUCED from 0.85rem */
+      font-size: 0.8rem;
       margin-bottom: 12px;
       line-height: 1.4;
     }
@@ -256,62 +267,192 @@
     .service-price {
       font-weight: 700;
       color: var(--gold);
-      font-size: 1.1rem; /* REDUCED from 1.2rem */
+      font-size: 1.1rem;
     }
     .service-card .btn {
       width: 100%;
       justify-content: center;
-      padding: 8px; /* REDUCED from 10px */
-      font-size: 0.8rem; /* REDUCED from 0.85rem */
+      padding: 8px;
+      font-size: 0.8rem;
     }
 
-    /* PROFESSIONALS */
+    /* ✅ NUEVA SECCIÓN PROFESIONALES - EFECTO GLOW CON MOUSE */
     .professionals-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 20px 0;
     }
-    .professional-card {
-      background: var(--black-card);
-      border-radius: 10px;
+    
+    .pro-card {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 20px;
+      padding: 3px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       overflow: hidden;
+      cursor: pointer;
+      transition: var(--transition);
       border: 1px solid rgba(212, 175, 55, 0.3);
     }
-    .professional-image {
-      width: 100%;
-      height: 260px;
+    
+    .pro-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light), #9b7653, var(--gold));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .pro-card:hover::before {
+      opacity: 0.15;
+    }
+    
+    .pro-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+      border-color: var(--gold);
+    }
+    
+    .pro-glow {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.6) 0%, rgba(212, 175, 55, 0) 70%);
+      filter: blur(40px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+    }
+    
+    .pro-card.active .pro-glow {
+      opacity: 1;
+    }
+    
+    .pro-content {
+      position: relative;
+      z-index: 2;
+      background: var(--black-card);
+      border-radius: 17px;
+      padding: 25px 20px;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .pro-avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
       object-fit: cover;
+      border: 4px solid var(--gold);
+      margin-bottom: 18px;
+      transition: var(--transition);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
     }
-    .professional-body { padding: 18px; }
-    .professional-card h3 {
-      font-size: 1.2rem;
-      text-transform: uppercase;
+    
+    .pro-card:hover .pro-avatar {
+      transform: scale(1.08);
+      border-color: var(--gold-light);
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.6);
+    }
+    
+    .pro-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
       margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    .professional-card .specialty {
+    
+    .pro-specialty {
       color: var(--gold);
       font-weight: 600;
-      margin-bottom: 10px;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
-    .professional-card p {
+    
+    .pro-desc {
       color: var(--gray-light);
       font-size: 0.85rem;
-      margin-bottom: 12px;
       line-height: 1.5;
+      margin-bottom: 18px;
+      padding: 0 10px;
     }
-    .contact-item {
+    
+    .pro-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    
+    .pro-contact-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin: 6px 0;
+      justify-content: center;
+      gap: 8px;
       color: var(--gray-light);
       font-size: 0.85rem;
     }
-    .contact-item i {
+    
+    .pro-contact-item i {
       color: var(--gold);
+      font-size: 1rem;
       width: 18px;
     }
+    
+    .pro-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    
+    .pro-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold);
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: var(--transition);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    
+    .pro-social a:hover {
+      background: var(--gold);
+      color: var(--black);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+    }
+    
+    .pro-social .fa-whatsapp:hover { background: #25D366; border-color: #25D366; color: white; }
+    .pro-social .fa-facebook-f:hover { background: #1877F2; border-color: #1877F2; color: white; }
+    .pro-social .fa-instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: transparent; color: white; }
 
     /* TESTIMONIALS SECTION */
     .testimonials-grid {
@@ -600,7 +741,7 @@
       margin-bottom: 25px;
     }
     .footer-logo img {
-      height: 110px; /* AUMENTADO de 80px a 110px */
+      height: 110px;
       width: auto;
       object-fit: contain;
       display: block;
@@ -693,6 +834,21 @@
       transform: translateY(-2px);
     }
 
+    /* ADMIN ACCESS BUTTON */
+    .admin-access {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .admin-access .btn {
+      font-size: 0.8rem;
+      padding: 8px 20px;
+      opacity: 0.8;
+    }
+    .admin-access .btn:hover {
+      opacity: 1;
+    }
+
     /* WHATSAPP FLOAT */
     .whatsapp-float {
       position: fixed;
@@ -722,7 +878,7 @@
       box-shadow: 0 5px 20px rgba(37, 211, 102, 0.6);
     }
 
-    /* MODAL DE ADVERTENCIA - NUEVO */
+    /* MODAL DE ADVERTENCIA */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -875,6 +1031,8 @@
       .social-link { width: 45px; height: 45px; font-size: 1.3rem; }
       .modal-content { padding: 25px 20px; margin: 10px; }
       .modal-title { font-size: 1.25rem; }
+      .pro-avatar { width: 95px; height: 95px; }
+      .pro-name { font-size: 1.15rem; }
     }
 </style>
 </head>
@@ -885,18 +1043,18 @@
       <nav>
         <a href="#" class="logo">
           <img src="https://i.postimg.cc/MGknBptS/1774959730d96c-removebg-preview.png" alt="Logo La Magia del Barbero">
-          饾悑饾悮 饾悓饾悮饾悹饾悽饾悮 饾悆饾悶饾惀 <span>饾悂饾悮饾惈饾悰饾悶饾惈饾惃</span>
+          𝐋𝐚 𝐌𝐚𝐠𝐢𝐚 𝐃𝐞𝐥 <span>𝐁𝐚𝐫𝐛𝐞𝐫𝐨</span>
         </a>
         <button class="mobile-toggle" id="mobileToggle">
           <i class="fas fa-bars"></i>
         </button>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#inicio">饾悎饾惂饾悽饾悳饾悽饾惃</a></li>
-          <li><a href="#servicios">饾悞饾悶饾惈饾惎饾悽饾悳饾悽饾惃饾惉</a></li>
-          <li><a href="#profesionales">饾悘饾惈饾惃饾悷饾悶饾惉饾悽饾惃饾惂饾悮饾惀饾悶饾惉</a></li>
-          <li><a href="#opiniones">饾悗饾惄饾悽饾惂饾悽饾惃饾惂饾悶饾惉</a></li>
-          <li><a href="#reservas">饾悜饾悶饾惉饾悶饾惈饾惎饾悮饾悳饾悽饾惃饾惂饾悶饾惉</a></li>
-          <li><a href="#ubicacion">饾悢饾悰饾悽饾悳饾悮饾悳饾悽饾惃饾惂</a></li>
+          <li><a href="#inicio">𝐈𝐧𝐢𝐜𝐢𝐨</a></li>
+          <li><a href="#servicios">𝐒𝐞𝐫𝐯𝐢𝐜𝐢𝐨𝐬</a></li>
+          <li><a href="#profesionales">𝐏𝐫𝐨𝐟𝐞𝐬𝐢𝐨𝐧𝐚𝐥𝐞𝐬</a></li>
+          <li><a href="#opiniones">𝐎𝐩𝐢𝐧𝐢𝐨𝐧𝐞𝐬</a></li>
+          <li><a href="#reservas">𝐑𝐞𝐬𝐞𝐫𝐯𝐚𝐜𝐢𝐨𝐧𝐞𝐬</a></li>
+          <li><a href="#ubicacion">𝐔𝐛𝐢𝐜𝐚𝐜𝐢𝐨𝐧</a></li>
         </ul>
       </nav>
     </div>
@@ -905,10 +1063,10 @@
   <!-- Hero -->
   <section id="inicio" class="hero">
     <div class="container">
-      <h1>饾悑饾悮 饾悓饾悮饾悹饾悽饾悮 饾悆饾悶饾惀 饾悂饾悮饾惈饾悰饾悶饾惈饾惃</h1>
-      <p>Cortes modernos y cl谩sicos, colorimetr铆a y tratamientos faciales en Andahuaylas</p>
+      <h1>𝐋𝐚 𝐌𝐚𝐠𝐢𝐚 𝐃𝐞𝐥 𝐁𝐚𝐫𝐛𝐞𝐫𝐨</h1>
+      <p>Cortes modernos y clásicos, colorimetría y tratamientos faciales en Andahuaylas</p>
       <a href="#reservas" class="btn">
-        <i class="fas fa-calendar-check"></i> 饾悜饾悶饾惉饾悶饾惈饾惎饾悮饾惈 饾悮饾悺饾惃饾惈饾悮
+        <i class="fas fa-calendar-check"></i> 𝐑𝐞𝐬𝐞𝐫𝐯𝐚𝐫 𝐚𝐡𝐨𝐫𝐚
       </a>
     </div>
   </section>
@@ -918,7 +1076,7 @@
     <div class="container">
       <div class="section-title">
         <h2>Servicios</h2>
-        <p>Calidad profesional con t茅cnicas modernas</p>
+        <p>Calidad profesional con técnicas modernas</p>
       </div>
       
       <div class="services-grid">
@@ -926,13 +1084,13 @@
           <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800" alt="Tratamiento Facial" class="service-image">
           <div class="service-content">
             <h3>Tratamiento Facial</h3>
-            <p class="service-description">Limpieza profunda e hidrataci贸n</p>
+            <p class="service-description">Limpieza profunda e hidratación</p>
             <div class="service-meta">
               <span class="service-time"><i class="far fa-clock"></i> 30 MIN</span>
               <span class="service-price">S/ 25</span>
             </div>
             <button class="btn btn-book" onclick="selectService('Tratamiento facial', 25)">
-              <i class="fas fa-calendar-plus"></i> 饾悜饾悶饾惉饾悶饾惈饾惎饾悮饾惈
+              <i class="fas fa-calendar-plus"></i> 𝐑𝐞𝐬𝐞𝐫𝐯𝐚𝐫
             </button>
           </div>
         </div>
@@ -941,13 +1099,13 @@
           <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800" alt="Corte Moderno" class="service-image">
           <div class="service-content">
             <h3>Corte Moderno + Cejas</h3>
-            <p class="service-description">Tendencia actual con dise帽o</p>
+            <p class="service-description">Tendencia actual con diseño</p>
             <div class="service-meta">
               <span class="service-time"><i class="far fa-clock"></i> 30 MIN</span>
               <span class="service-price">S/ 15</span>
             </div>
-            <button class="btn btn-book" onclick="selectService('Corte moderno + dise帽o de cejas', 15)">
-              <i class="fas fa-calendar-plus"></i> 饾悜饾悶饾惉饾悶饾惈饾惎饾悮饾惈
+            <button class="btn btn-book" onclick="selectService('Corte moderno + diseño de cejas', 15)">
+              <i class="fas fa-calendar-plus"></i> 𝐑𝐞𝐬𝐞𝐫𝐯𝐚𝐫
             </button>
           </div>
         </div>
@@ -956,13 +1114,13 @@
           <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800" alt="Corte Premium" class="service-image">
           <div class="service-content">
             <h3>Corte Premium</h3>
-            <p class="service-description">Corte + facial + ondulaci贸n + lavado</p>
+            <p class="service-description">Corte + facial + ondulación + lavado</p>
             <div class="service-meta">
               <span class="service-time"><i class="far fa-clock"></i> 120 MIN</span>
               <span class="service-price">S/ 80</span>
             </div>
             <button class="btn btn-book" onclick="selectService('Corte premium', 80)">
-              <i class="fas fa-crown"></i> 饾悜饾悶饾惉饾悶饾惈饾惎饾悮饾惈
+              <i class="fas fa-crown"></i> 𝐑𝐞𝐬𝐞𝐫𝐯𝐚𝐫
             </button>
           </div>
         </div>
@@ -977,37 +1135,37 @@
               <span class="service-price">S/ 25</span>
             </div>
             <button class="btn btn-book" onclick="selectService('Corte + barba + ceja + lavado', 25)">
-              <i class="fas fa-calendar-plus"></i> 饾悜饾悶饾惉饾悶饾惈饾惎饾悮饾惈
+              <i class="fas fa-calendar-plus"></i> 𝐑𝐞𝐬𝐞𝐫𝐯𝐚𝐫
             </button>
           </div>
         </div>
 
         <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800" alt="Corte Cl谩sico" class="service-image">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800" alt="Corte Clásico" class="service-image">
           <div class="service-content">
-            <h3>Corte Cl谩sico</h3>
+            <h3>Corte Clásico</h3>
             <p class="service-description">Estilo tradicional</p>
             <div class="service-meta">
               <span class="service-time"><i class="far fa-clock"></i> 20 MIN</span>
               <span class="service-price">S/ 10</span>
             </div>
-            <button class="btn btn-book" onclick="selectService('Corte cl谩sico', 10)">
-              <i class="fas fa-calendar-plus"></i> 饾悜饾悶饾惉饾悶饾惈饾惎饾悮饾惈
+            <button class="btn btn-book" onclick="selectService('Corte clásico', 10)">
+              <i class="fas fa-calendar-plus"></i> 𝐑𝐞𝐬𝐞𝐫𝐯𝐚𝐫
             </button>
           </div>
         </div>
 
         <div class="service-card">
-          <img src="https://i.postimg.cc/pXJ3hSd0/68c67afb4acfc8f88822f1b536aa65a6.jpg" alt="Ondulaci贸n" class="service-image">
+          <img src="https://i.postimg.cc/pXJ3hSd0/68c67afb4acfc8f88822f1b536aa65a6.jpg" alt="Ondulación" class="service-image">
           <div class="service-content">
-            <h3>Ondulaci贸n</h3>
+            <h3>Ondulación</h3>
             <p class="service-description">Ondas definidas</p>
             <div class="service-meta">
               <span class="service-time"><i class="far fa-clock"></i> 90 MIN</span>
               <span class="service-price">S/ 30</span>
             </div>
-            <button class="btn btn-book" onclick="selectService('Ondulaci贸n 30', 30)">
-              <i class="fas fa-calendar-plus"></i> 饾悜饾悶饾惉饾悶饾惈饾惎饾悮饾惈
+            <button class="btn btn-book" onclick="selectService('Ondulación 30', 30)">
+              <i class="fas fa-calendar-plus"></i> 𝐑𝐞𝐬𝐞𝐫𝐯𝐚𝐫
             </button>
           </div>
         </div>
@@ -1016,13 +1174,13 @@
           <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800" alt="Tinte" class="service-image">
           <div class="service-content">
             <h3>Tinte Negro</h3>
-            <p class="service-description">Coloraci贸n profesional</p>
+            <p class="service-description">Coloración profesional</p>
             <div class="service-meta">
               <span class="service-time"><i class="far fa-clock"></i> 30 MIN</span>
               <span class="service-price">S/ 25</span>
             </div>
             <button class="btn btn-book" onclick="selectService('Tinte negro', 25)">
-              <i class="fas fa-calendar-plus"></i> 饾悜饾悶饾惉饾悶饾惈饾惎饾悮饾惈
+              <i class="fas fa-calendar-plus"></i> 𝐑𝐞𝐬𝐞𝐫𝐯𝐚𝐫
             </button>
           </div>
         </div>
@@ -1031,13 +1189,13 @@
           <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800" alt="Limpieza" class="service-image">
           <div class="service-content">
             <h3>Limpieza del Rostro</h3>
-            <p class="service-description">Exfoliaci贸n y purificaci贸n</p>
+            <p class="service-description">Exfoliación y purificación</p>
             <div class="service-meta">
               <span class="service-time"><i class="far fa-clock"></i> 20 MIN</span>
               <span class="service-price">S/ 15</span>
             </div>
             <button class="btn btn-book" onclick="selectService('Limpieza del rostro', 15)">
-              <i class="fas fa-calendar-plus"></i> 饾悜饾悶饾惉饾悶饾惈饾惎饾悮饾惈
+              <i class="fas fa-calendar-plus"></i> 𝐑𝐞𝐬𝐞𝐫𝐯𝐚𝐫
             </button>
           </div>
         </div>
@@ -1051,8 +1209,8 @@
               <span class="service-time"><i class="far fa-clock"></i> 45 MIN</span>
               <span class="service-price">S/ 50</span>
             </div>
-            <button class="btn btn-book" onclick="selectService('Corte, facial, lavado + dise帽o de ceja', 50)">
-              <i class="fas fa-calendar-plus"></i> 饾悜饾悶饾惉饾悶饾惈饾惎饾悮饾惈
+            <button class="btn btn-book" onclick="selectService('Corte, facial, lavado + diseño de ceja', 50)">
+              <i class="fas fa-calendar-plus"></i> 𝐑𝐞𝐬𝐞𝐫𝐯𝐚𝐫
             </button>
           </div>
         </div>
@@ -1060,40 +1218,59 @@
     </div>
   </section>
 
-  <!-- Professionals -->
+  <!-- ✅ NUEVA SECCIÓN PROFESIONALES CON EFECTO GLOW -->
   <section id="profesionales" style="background: var(--black-light);">
     <div class="container">
       <div class="section-title">
         <h2>Profesionales</h2>
+        <p>Conoce a nuestro equipo experto</p>
       </div>
       
       <div class="professionals-grid">
-        <div class="professional-card">
-          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800" alt="Kennedy" class="professional-image">
-          <div class="professional-body">
-            <h3>Kennedy Ramirez</h3>
-            <div class="specialty">Barbero Profesional</div>
-            <p>Especialista en cortes, colorimetr铆a, ondulaci贸n y tratamientos faciales</p>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <span>+51 977 355 999</span>
+        <!-- Profesional 1: Kennedy -->
+        <div class="pro-card" id="pro1">
+          <div class="pro-glow"></div>
+          <div class="pro-content">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400" alt="Kennedy Ramirez" class="pro-avatar">
+            <h3 class="pro-name">Kennedy Ramirez</h3>
+            <p class="pro-specialty">Barbero Profesional</p>
+            <p class="pro-desc">Especialista en cortes modernos, colorimetría, ondulación y tratamientos faciales con más de 8 años de experiencia.</p>
+            <div class="pro-contact">
+              <div class="pro-contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+51 977 355 999</span>
+              </div>
+              <div class="pro-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>kennedyramirez27@gmail.com</span>
+              </div>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span>kennedyramirez27@gmail.com</span>
+            <div class="pro-social">
+              <a href="https://wa.me/51977355999" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="professional-card">
-          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800" alt="Ruth" class="professional-image">
-          <div class="professional-body">
-            <h3>Ruth Elizabeth 脩t</h3>
-            <div class="specialty">Estilista Profesional</div>
-            <p>Especialista en cortes, colorimetr铆a y ondulaciones</p>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <span>979 014 679</span>
+        <!-- Profesional 2: Ruth -->
+        <div class="pro-card" id="pro2">
+          <div class="pro-glow"></div>
+          <div class="pro-content">
+            <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400" alt="Ruth Elizabeth" class="pro-avatar">
+            <h3 class="pro-name">Ruth Elizabeth Ñt</h3>
+            <p class="pro-specialty">Estilista Profesional</p>
+            <p class="pro-desc">Experta en cortes femeninos, colorimetría avanzada y ondulaciones. Creatividad y precisión en cada estilo.</p>
+            <div class="pro-contact">
+              <div class="pro-contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+51 979 014 679</span>
+              </div>
+            </div>
+            <div class="pro-social">
+              <a href="https://wa.me/51979014679" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
           </div>
         </div>
@@ -1105,7 +1282,7 @@
   <section id="opiniones">
     <div class="container">
       <div class="section-title">
-        <h2>饾悗饾惄饾悽饾惂饾悽饾惃饾惂饾悶饾惉 饾悵饾悶 饾惂饾惍饾悶饾惉饾惌饾惈饾惃饾惉 饾悳饾惀饾悽饾悶饾惂饾惌饾悶饾惉</h2>
+        <h2>𝐎𝐩𝐢𝐧𝐢𝐨𝐧𝐞𝐬 𝐝𝐞 𝐧𝐮𝐞𝐬𝐭𝐫𝐨𝐬 𝐜𝐥𝐢𝐞𝐧𝐭𝐞𝐬</h2>
         <p>Lo que dicen quienes confiaron en nosotros</p>
       </div>
       
@@ -1121,7 +1298,7 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <p class="testimonial-text">"隆Incre铆ble experiencia! Kennedy es un verdadero profesional. El corte premium vale cada sol. Mi cabello nunca se vio tan bien. 隆100% recomendado!"</p>
+          <p class="testimonial-text">"¡Increíble experiencia! Kennedy es un verdadero profesional. El corte premium vale cada sol. Mi cabello nunca se vio tan bien. ¡100% recomendado!"</p>
         </div>
 
         <div class="testimonial-card">
@@ -1135,7 +1312,7 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <p class="testimonial-text">"Ruth es una artista con las tijeras. El tratamiento facial dej贸 mi piel incre铆ble. El ambiente es muy acogedor y profesional. 隆Volver茅 sin duda!"</p>
+          <p class="testimonial-text">"Ruth es una artista con las tijeras. El tratamiento facial dejó mi piel increíble. El ambiente es muy acogedor y profesional. ¡Volveré sin duda!"</p>
         </div>
 
         <div class="testimonial-card">
@@ -1149,7 +1326,7 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
           </div>
-          <p class="testimonial-text">"La mejor barber铆a de Andahuaylas. Puntualidad, higiene y calidad. El servicio de corte + barba + ceja es impecable. 隆Gracias por la atenci贸n!"</p>
+          <p class="testimonial-text">"La mejor barbería de Andahuaylas. Puntualidad, higiene y calidad. El servicio de corte + barba + ceja es impecable. ¡Gracias por la atención!"</p>
         </div>
       </div>
     </div>
@@ -1164,7 +1341,7 @@
       
       <div class="booking-container">
         <div class="booking-form" id="bookingForm">
-          <h3>鉁傦笍 COMPLETA TUS DATOS 鉁傦笍</h3>
+          <h3>✂️ COMPLETA TUS DATOS ✂️</h3>
           
           <div class="form-grid">
             <div class="form-group">
@@ -1172,33 +1349,33 @@
               <select class="form-control" id="service" required>
                 <option value="">SELECCIONA UN SERVICIO</option>
                 <option value="Tratamiento facial|25">TRATAMIENTO FACIAL - S/ 25</option>
-                <option value="Corte moderno + dise帽o de cejas|15">CORTE MODERNO + CEJAS - S/ 15</option>
+                <option value="Corte moderno + diseño de cejas|15">CORTE MODERNO + CEJAS - S/ 15</option>
                 <option value="Corte premium|80">CORTE PREMIUM - S/ 80</option>
                 <option value="Corte + barba + ceja + lavado|25">CORTE + BARBA + CEJA - S/ 25</option>
-                <option value="Corte cl谩sico|10">CORTE CL脕SICO - S/ 10</option>
-                <option value="Ondulaci贸n 30|30">ONDULACI脫N 30 - S/ 30</option>
+                <option value="Corte clásico|10">CORTE CLÁSICO - S/ 10</option>
+                <option value="Ondulación 30|30">ONDULACIÓN 30 - S/ 30</option>
                 <option value="Tinte negro|25">TINTE NEGRO - S/ 25</option>
                 <option value="Limpieza del rostro|15">LIMPIEZA DEL ROSTRO - S/ 15</option>
-                <option value="Corte, facial, lavado + dise帽o de ceja|50">CORTE + FACIAL + CEJA - S/ 50</option>
+                <option value="Corte, facial, lavado + diseño de ceja|50">CORTE + FACIAL + CEJA - S/ 50</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label>馃懁 PROFESIONAL</label>
+              <label>👤 PROFESIONAL</label>
               <select class="form-control" id="professional" required>
                 <option value="">SELECCIONA PROFESIONAL</option>
                 <option value="Kennedy Ramirez Zaravia|51977355999">KENNEDY RAMIREZ ZARAVIA</option>
-                <option value="Ruth Elizabeth 脩t|51979014679">RUTH ELIZABETH 脩T</option>
+                <option value="Ruth Elizabeth Ñt|51979014679">RUTH ELIZABETH ÑT</option>
               </select>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label>馃搮 FECHA</label>
+                <label>📅 FECHA</label>
                 <input type="date" class="form-control" id="date" required>
               </div>
               <div class="form-group">
-                <label>鈴� HORA</label>
+                <label>⏰ HORA</label>
                 <select class="form-control" id="time" required>
                   <option value="">SELECCIONA HORA</option>
                   <option value="08:00">08:00</option>
@@ -1219,17 +1396,17 @@
             </div>
 
             <div class="form-group">
-              <label>馃懁 NOMBRE COMPLETO</label>
+              <label>👤 NOMBRE COMPLETO</label>
               <input type="text" class="form-control" id="name" placeholder="TU NOMBRE" required>
             </div>
 
             <div class="form-group">
-              <label>馃摫 TEL脡FONO</label>
+              <label>📱 TELÉFONO</label>
               <input type="tel" class="form-control" id="phone" placeholder="+51 9XX XXX XXX" required>
             </div>
 
             <div class="form-group">
-              <label>馃摟 EMAIL (OPCIONAL)</label>
+              <label>📧 EMAIL (OPCIONAL)</label>
               <input type="email" class="form-control" id="email" placeholder="tu@email.com">
             </div>
           </div>
@@ -1263,10 +1440,10 @@
             <i class="fas fa-check"></i>
           </div>
           <h3>CONFIRMA TU CITA</h3>
-          <p>Est谩s apunto de reservar tu cita</p>
+          <p>Estás apunto de reservar tu cita</p>
           
           <div class="confirmation-note">
-            <i class="fas fa-info-circle"></i> <strong>Importante:</strong> Haz clic en el bot贸n de abajo para enviar tu confirmaci贸n directamente por WhatsApp. 隆Es r谩pido y seguro!
+            <i class="fas fa-info-circle"></i> <strong>Importante:</strong> Haz clic en el botón de abajo para enviar tu confirmación directamente por WhatsApp. ¡Es rápido y seguro!
           </div>
           
           <a href="#" class="whatsapp-confirm" id="whatsappLink" target="_blank">
@@ -1274,7 +1451,7 @@
           </a>
           
           <p style="font-size: 0.85rem; color: var(--gray); margin-top: 10px;">
-            <i class="fas fa-shield-alt"></i> Tus datos est谩n protegidos. Solo el profesional seleccionado recibir谩 tu informaci贸n.
+            <i class="fas fa-shield-alt"></i> Tus datos están protegidos. Solo el profesional seleccionado recibirá tu información.
           </p>
           
           <button class="btn btn-outline btn-reset" onclick="resetForm()">
@@ -1289,7 +1466,7 @@
   <section id="ubicacion">
     <div class="container">
       <div class="section-title">
-        <h2>馃搷 UBICACI脫N</h2>
+        <h2>📍 UBICACIÓN</h2>
       </div>
       
       <div class="location-contact">
@@ -1298,20 +1475,20 @@
         </div>
         
         <div class="contact-card">
-          <h3><i class="fas fa-headset"></i>饾悅饾悗饾悕饾悡饾悁饾悅饾悡饾悗</h3>
+          <h3><i class="fas fa-headset"></i>𝐂𝐎𝐍𝐓𝐀𝐂𝐓𝐎</h3>
           
           <div class="contact-detail">
             <i class="fas fa-map-marker-alt"></i>
             <div>
-              <strong>DIRECCI脫N</strong>
-              <p>Av. Juan Antonio Trelles 153, Andahuaylas, Per煤</p>
+              <strong>DIRECCIÓN</strong>
+              <p>Av. Juan Antonio Trelles 153, Andahuaylas, Perú</p>
             </div>
           </div>
           
           <div class="contact-detail">
             <i class="fas fa-phone"></i>
             <div>
-              <strong>TEL脡FONO</strong>
+              <strong>TELÉFONO</strong>
               <p><a href="tel:+51977355999">+51 977 355 999</a></p>
             </div>
           </div>
@@ -1353,7 +1530,14 @@
       
       <div class="copyright">
         &copy; <span id="year"></span> TODOS LOS DERECHOS RESERVADOS<br>
-        <a href="https://bermat-mods.onrender.com/" target="_blank" class="credits">漏 饾悂饾悇饾悜饾悓饾悁饾悡-饾悅饾悗饾悆饾悇饢</a>
+        <a href="https://bermat-mods.onrender.com/" target="_blank" class="credits">© 𝐁𝐄𝐑𝐌𝐀𝐓-𝐂𝐎𝐃𝐄𖤍</a>
+      </div>
+      
+      <!-- ✅ BOTÓN DE ACCESO ADMINISTRATIVO -->
+      <div class="admin-access">
+        <a href="vercel/Administrador.html" class="btn btn-admin" title="Acceso exclusivo para administradores">
+          <i class="fas fa-user-shield"></i> 𝐀𝐂𝐂𝐄𝐒𝐎 𝐀𝐃𝐌𝐈𝐍
+        </a>
       </div>
     </div>
   </footer>
@@ -1370,8 +1554,8 @@
       <div class="modal-icon">
         <i class="fas fa-exclamation-triangle"></i>
       </div>
-      <h3 class="modal-title">鈿狅笍 Datos Incompletos</h3>
-      <p class="modal-text">Para confirmar tu reserva, por favor completa todos los campos obligatorios del formulario. 隆Es r谩pido y seguro!</p>
+      <h3 class="modal-title">⚠️ Datos Incompletos</h3>
+      <p class="modal-text">Para confirmar tu reserva, por favor completa todos los campos obligatorios del formulario. ¡Es rápido y seguro!</p>
       <button class="modal-btn" onclick="closeModalAndScroll()">
         <i class="fas fa-arrow-down"></i> IR AL FORMULARIO
       </button>
@@ -1473,7 +1657,7 @@
       const phone = document.getElementById('phone').value;
       const email = document.getElementById('email').value;
       
-      // VALIDACI脫N: Si faltan campos, mostrar modal decorado
+      // VALIDACIÓN: Si faltan campos, mostrar modal decorado
       if (!service || !professional || !date || !time || !name || !phone) {
         showModal();
         return;
@@ -1492,16 +1676,16 @@
       }).toUpperCase();
       
       // Create WhatsApp message with emojis and professional formatting
-      const message = `*馃敟 隆饾悕饾悢饾悇饾悤饾悁 饾悜饾悇饾悞饾悇饾悜饾悤饾悁 饾悅饾悗饾悕饾悈饾悎饾悜饾悓饾悁饾悆饾悁! 馃敟*%0A%0A` +
-        `*馃搵 SERVICIO:* ${serviceName.toUpperCase()}%0A` +
-        `*馃挵 PRECIO:* S/ ${price}%0A%0A` +
-        `*馃懁 PROFESIONAL:* ${profName.toUpperCase()}%0A%0A` +
-        `*馃搮 FECHA:* ${dateFormatted}%0A` +
-        `*鈴� HORA:* ${time}%0A%0A` +
-        `*馃懁 CLIENTE:* ${name.toUpperCase()}%0A` +
-        `*馃摫 TEL脡FONO:* ${phone}%0A` +
-        `${email ? `*馃摟 EMAIL:* ${email}%0A` : ''}%0A` +
-        `*鉁� 隆Estar茅 ahi puntual, Gracias! 鉁�*`;
+      const message = `*🔥 ¡𝐍𝐔𝐄𝐕𝐀 𝐑𝐄𝐒𝐄𝐑𝐕𝐀 𝐂𝐎𝐍𝐅𝐈𝐑𝐌𝐀𝐃𝐀! 🔥*%0A%0A` +
+        `*📋 SERVICIO:* ${serviceName.toUpperCase()}%0A` +
+        `*💰 PRECIO:* S/ ${price}%0A%0A` +
+        `*👤 PROFESIONAL:* ${profName.toUpperCase()}%0A%0A` +
+        `*📅 FECHA:* ${dateFormatted}%0A` +
+        `*⏰ HORA:* ${time}%0A%0A` +
+        `*👤 CLIENTE:* ${name.toUpperCase()}%0A` +
+        `*📱 TELÉFONO:* ${phone}%0A` +
+        `${email ? `*📧 EMAIL:* ${email}%0A` : ''}%0A` +
+        `*✨ ¡Estaré ahi puntual, Gracias! ✨*`;
       
       // Set WhatsApp link with the professional's number - DIRECT REDIRECT
       const whatsappURL = `https://wa.me/${profPhone}?text=${message}`;
@@ -1541,6 +1725,29 @@
     // Initialize
     document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('confirmation').classList.remove('active');
+      
+      // ✅ EFECTO GLOW CON MOUSE PARA TARJETAS DE PROFESIONALES
+      const proCards = document.querySelectorAll('.pro-card');
+      
+      proCards.forEach(card => {
+        const glow = card.querySelector('.pro-glow');
+        
+        card.addEventListener('mouseenter', () => {
+          card.classList.add('active');
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('active');
+        });
+        
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          glow.style.left = x + 'px';
+          glow.style.top = y + 'px';
+        });
+      });
     });
     
     // Keyboard support for modal
