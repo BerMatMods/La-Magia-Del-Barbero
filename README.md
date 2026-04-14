@@ -2,201 +2,280 @@
 # 💈 La Magia Del Barbero | Barber Shop Premium
 
 <p align="center">
-  <img src="https://i.postimg.cc/Z5Y5wLpy/Picsart-26-04-14-07-41-30-147.png" alt="La Magia Del Barbero Logo" width="200"/>
+  <img src="https://i.postimg.cc/Z5Y5wLpy/Picsart-26-04-14-07-41-30-147.png" alt="La Magia Del Barbero - Logo Neón" width="220"/>
 </p>
 
 <p align="center">
-  <strong>Estilo • Precisión • Experiencia Única</strong>
+  <strong>🐺 Estilo • Precisión • Esencia 🐺</strong>
 </p>
 
 <p align="center">
   <a href="https://wa.me/51977355999">
-    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp"/>
+    <img src="https://img.shields.io/badge/💬_WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp"/>
   </a>
   <a href="https://www.facebook.com/share/1BHEnX7T2R/">
-    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook"/>
+    <img src="https://img.shields.io/badge/📘_Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook"/>
   </a>
   <a href="https://www.tiktok.com/@lamagiadelbarbero.5">
-    <img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok"/>
+    <img src="https://img.shields.io/badge/🎵_TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok"/>
   </a>
-  <img src="https://img.shields.io/badge/Ubicación-Andahuaylas%2C%20Perú-gold?style=for-the-badge&logo=google-maps&logoColor=white" alt="Ubicación"/>
+  <img src="https://img.shields.io/badge/📍_Andahuaylas%2C%20Perú-gold?style=for-the-badge&logo=google-maps&logoColor=white" alt="Ubicación"/>
 </p>
 
 ---
 
-## 📋 Descripción
-
-**La Magia Del Barbero** es una barbería profesional ubicada en Andahuaylas, Apurímac, Perú. Ofrecemos cortes modernos y clásicos para niños, jóvenes y adultos, arreglo de barba, colorimetría y tratamientos faciales. Vive una experiencia de barbería premium con atención personalizada y estilo.
-
-> ✨ *"Donde el estilo encuentra su esencia"*
-
----
-
-## 🎨 Características del Sitio Web
-
-```diff
-+ ✅ Diseño Responsive (Mobile-First)
-+ ✅ Animaciones CSS con Gold Glow Effects
-+ ✅ Sistema de Reservas con WhatsApp Integration
-+ ✅ Galería de Servicios con Precios en Soles
-+ ✅ Sección de Profesionales con Perfiles
-+ ✅ Mapa de Ubicación con Google Maps Embed
-+ ✅ Optimización de Rendimiento (Scroll Suave)
-+ ✅ Accesibilidad y SEO Básico Implementado
-+ ✅ Iconos Font Awesome 6.4.0
-+ ✅ Fuentes Google: Orbitron & Rajdhani
-```
-
----
-
-## ✂️ Nuestros Servicios
-
-| Servicio | Duración | Precio | Icono |
-|----------|----------|--------|-------|
-| 🧖 Tratamiento Facial | 30 min | S/ 25 | `fa-spa` |
-| ✂️ Corte Moderno + Cejas | 30 min | S/ 15 | `fa-cut` |
-| 👑 Corte Premium | 120 min | S/ 80 | `fa-crown` |
-| 🪒 Corte + Barba + Ceja | 45 min | S/ 25 | `fa-user` |
-| 🎩 Corte Clásico | 20 min | S/ 10 | `fa-scissors` |
-| 🌊 Ondulación | 90 min | S/ 30 | `fa-wind` |
-| 🎨 Tinte Negro | 30 min | S/ 25 | `fa-palette` |
-| 💆 Limpieza del Rostro | 20 min | S/ 15 | `fa-soap` |
-| 🎁 Pack Transformación | 45 min | S/ 50 | `fa-gift` |
-
----
-
-## 👥 Nuestros Profesionales
-
-<div align="center">
-
-### 🪒 Kennedy Ramirez
-> **Barbero Profesional**  
-> Especialista en cortes de precisión, colorimetría avanzada, ondulación moderna y tratamientos faciales premium. +5 años de experiencia.
-
-### 💇 Ruth Elizabeth Ñt  
-> **Estilista Profesional**  
-> Experta en cortes femeninos y masculinos, colorimetría personalizada, ondulaciones duraderas y asesoría de imagen.
-
-</div>
-
----
-
-## 📍 Ubicación y Contacto
+## 🐺 Identidad Visual & Branding
 
 ```yaml
-🏢 Dirección:
-   └─ Av. Juan Antonio Trelles 153, Andahuaylas, Perú
+🎨 Logo Principal:
+   └─ Formato: PNG con fondo transparente
+   └─ Estilo: Neón dorado sobre fondo oscuro
+   └─ Ubicación: /head > link[rel="icon"] + footer
+   └─ URL: https://i.postimg.cc/Z5Y5wLpy/Picsart-26-04-14-07-41-30-147.png
 
-📞 Teléfono:
-   └─ +51 977 355 999
+🖼️ Imagen Hero:
+   └─ Fondo con overlay dorado y efecto parallax
+   └─ URL: https://i.postimg.cc/Hs1LGmDV/1776171893e71a.png
 
-📧 Email:
-   └─ kennedyramirez27@gmail.com
+🎭 Paleta de Colores CSS Variables:
+   └─ --black: #050505          → Fondo base
+   └─ --black-card: #0f0f0f     → Tarjetas
+   └─ --gold: #D4AF37           → Acentos principales
+   └─ --gold-light: #FFD700     → Gradientes hover
+   └─ --gold-glow: rgba(...)    → Efectos de brillo
+   └─ --white / --gray          → Tipografía
 
-🕐 Horario:
-   └─ Lunes a Sábado: 08:00 - 20:00
-   └─ Domingos: Cerrado
+✒️ Tipografía:
+   └─ Orbitron (700/900) → Títulos y logos
+   └─ Rajdhani (300/500/700) → Cuerpo de texto
+   └─ Carga: Google Fonts con preconnect
+```
 
-🗺️ Coordenadas:
-   └─ Lat: -13.654321 | Lng: -73.395123
+---
+
+## 🏗️ Estructura del Proyecto
+
+```
+la-magia-del-barbero/
+│
+├── 📄 index.html                 # Archivo principal (single-page)
+│
+├── 🎨 <style>                    # CSS embebido en <head>
+│   │
+│   ├── 🎭 :root                  # Variables CSS globales
+│   ├── 🌐 Reset & Base Styles   # Normalización y body
+│   ├── ✨ Animaciones Keyframes # fadeInUp, pulse, bounce, gradientShift
+│   ├── 📱 Responsive Media Queries # Mobile-first breakpoints
+│   ├── 🧭 Header & Navigation   # Sticky header + menú móvil
+│   ├── 🦸 Hero Section          # Full-viewport con background fijo
+│   ├── 📦 Cards System          # Servicios y profesionales (grid)
+│   ├── 📅 Booking System        # Formulario + confirmación WhatsApp
+│   ├── 🗺️ Location Section      # Google Maps embed + contacto
+│   ├── 🔻 Footer & Social       # Logo + redes + copyright
+│   ├── 🪟 Modal System          # Advertencias y UX feedback
+│   └── 📱 WhatsApp Float Button # Botón flotante con animación
+│
+├── ⚙️ <script>                   # JavaScript embebido antes de </body>
+│   │
+│   ├── 🔄 Scroll Optimization   # requestAnimationFrame para header
+│   ├── 📱 Mobile Menu Toggle    # Hamburguesa + navegación responsive
+│   ├── 📋 Form Validation       # Campos obligatorios + modal alerta
+│   ├── 💬 WhatsApp Generator    # Construcción de mensaje con formato
+│   ├── 📅 Date Formatting       # Parseo manual para evitar timezone
+│   ├── 🎯 Smooth Scroll         # Navegación entre anclas
+│   └── ♻️ Form Reset            # Limpieza y reutilización
+│
+└── 🖼️ Assets Externos (CDN/Postimg)
+    ├── 🌐 Fonts: Google Fonts + Font Awesome 6.4.0
+    ├── 🖼️ Imágenes: postimg.cc + Unsplash (lazy loading)
+    └── 🗺️ Mapa: Google Maps Embed API
+```
+
+---
+
+## 🛠️ Stack Tecnológico
+
+<p align="center">
+  <img src="https://img.shields.io/badge/📄_HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+  <img src="https://img.shields.io/badge/🎨_CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/⚡_JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+  <img src="https://img.shields.io/badge/🔤_Google_Fonts-4285F4?style=for-the-badge&logo=googlefonts&logoColor=white" alt="Google Fonts"/>
+  <img src="https://img.shields.io/badge/🎯_Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white" alt="Font Awesome"/>
+  <img src="https://img.shields.io/badge/🗺️_Google_Maps-4285F4?style=for-the-badge&logo=googlemaps&logoColor=white" alt="Google Maps"/>
+</p>
+
+```diff
+✅ Características Técnicas:
++ Single-Page Application (SPA) sin frameworks
++ CSS Variables para theming consistente
++ Backdrop-filter para efectos glassmorphism
++ CSS Grid + Flexbox para layouts responsivos
++ Animaciones nativas con keyframes optimizadas
++ Integración directa con WhatsApp Business API
++ Lazy loading en imágenes para performance
++ Meta tags SEO + Google Site Verification
++ Accesibilidad: aria-labels + contraste adecuado
++ Prefers-reduced-motion para accesibilidad
+```
+
+---
+
+## 🧩 Componentes Principales
+
+### 🧭 Header & Navegación
+```html
+<!-- Sticky header con backdrop-filter -->
+<header id="mainHeader" class="scrolled">
+  <nav>
+    <!-- Logo con imagen + texto gradient -->
+    <!-- Nav links desktop + mobile toggle -->
+    <!-- Efecto hover con underline dorado animado -->
+  </nav>
+</header>
+```
+
+### 🦸 Hero Section
+```css
+/* Fondo con imagen fija + overlay gradient */
+/* Badge dorado con box-shadow glow */
+/* Título con background-clip: text gradient */
+/* Botón CTA con animación shine on hover */
+```
+
+### 📦 Sistema de Tarjetas
+```css
+.service-card, .professional-card {
+  /* Border dorado semi-transparente */
+  /* Hover: translateY + scale image + glow shadow */
+  /* Pseudo-elemento ::before para línea superior animada */
+  /* Transiciones cubic-bezier para suavidad */
+}
+```
+
+### 📅 Sistema de Reservas
+```javascript
+// Flujo completo:
+1. Selección de servicio → scroll suave al formulario
+2. Validación en tiempo real de campos requeridos
+3. Generación de resumen con formato de fecha ES-PE
+4. Construcción de mensaje WhatsApp con plantilla estructurada
+5. Redirección automática a wa.me con texto codificado
+6. Confirmación visual con animación de éxito
+```
+
+### 🪟 Modal de Advertencia
+```css
+/* Overlay con blur + animación de entrada */
+/* Icono de alerta con pulse animation */
+/* Botón de cierre accesible + tecla ESC */
+/* Scroll automático al formulario tras cerrar */
+```
+
+---
+
+## 📱 Responsive Design
+
+```css
+/* Breakpoint principal: 768px */
+@media (max-width: 768px) {
+  /* Menú hamburguesa con slide-down */
+  /* Tipografía escalada para legibilidad */
+  /* Grids convertidos a columna única */
+  /* Botones full-width para toque fácil */
+  /* WhatsApp float ajustado a pantalla pequeña */
+  /* Imágenes profesionales con aspect-ratio 1:1 */
+}
 ```
 
 <p align="center">
-  <a href="https://wa.me/51977355999">
-    <img src="https://img.shields.io/badge/📲_Reservar_Ahora-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=black" alt="Reservar"/>
-  </a>
+  <img src="https://img.shields.io/badge/📱_Mobile_First-✅-green?style=for-the-badge" alt="Mobile First"/>
+  <img src="https://img.shields.io/badge/🖥️_Desktop_Optimized-✅-blue?style=for-the-badge" alt="Desktop"/>
+  <img src="https://img.shields.io/badge/♿_Accesibilidad-✅-purple?style=for-the-badge" alt="Accesibilidad"/>
 </p>
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
-
-<p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/Google_Fonts-4285F4?style=for-the-badge&logo=googlefonts&logoColor=white" alt="Google Fonts"/>
-  <img src="https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white" alt="Font Awesome"/>
-</p>
-
----
-
-## 🚀 Cómo Usar
+## 🚀 Despliegue Rápido
 
 ```bash
-# 1️⃣ Clonar el repositorio
-git clone https://github.com/tu-usuario/la-magia-del-barbero.git
+# 🔹 Opción 1: GitHub Pages (Recomendado)
+1. Subir index.html a repositorio público
+2. Ir a Settings → Pages → Branch: main → /root
+3. ¡Listo! Tu sitio estará en https://tu-usuario.github.io/repo
 
-# 2️⃣ Navegar al directorio
-cd la-magia-del-barbero
+# 🔹 Opción 2: Servidor Local con VS Code
+1. Instalar extensión "Live Server"
+2. Click derecho en index.html → "Open with Live Server"
+3. Acceso inmediato en http://127.0.0.1:5500
 
-# 3️⃣ Abrir el archivo index.html en tu navegador
-#    o usar un servidor local como Live Server (VS Code)
-
-# 4️⃣ ¡Listo! La página estará funcionando 🎉
-```
-
-> 💡 **Recomendación:** Para una mejor experiencia de desarrollo, usa [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) en Visual Studio Code.
-
----
-
-## 📱 Funcionalidades Interactivas
-
-```javascript
-// ✅ Reserva vía WhatsApp con formato personalizado
-// ✅ Validación de formulario en tiempo real
-// ✅ Cálculo automático de precios y resumen
-// ✅ Menú hamburguesa responsive para móviles
-// ✅ Efectos hover con gold-glow en tarjetas
-// ✅ Scroll suave entre secciones
-// ✅ Modal de advertencia para campos incompletos
-// ✅ Animaciones CSS keyframes personalizadas
+# 🔹 Opción 3: Hosting Estático (Netlify/Vercel)
+1. Arrastrar carpeta del proyecto al dashboard
+2. Configuración automática de build (none required)
+3. Dominio personalizado opcional
 ```
 
 ---
 
-## 🎨 Paleta de Colores
+## 🔧 Personalización
 
-| Color | Código | Uso |
-|-------|--------|-----|
-| ⬛ Negro Base | `#050505` | Fondo principal |
-| ⬛ Negro Card | `#0f0f0f` | Tarjetas y secciones |
-| ✨ Dorado | `#D4AF37` | Acentos y bordes |
-| ✨ Dorado Light | `#FFD700` | Gradientes y hover |
-| ⬜ Blanco | `#ffffff` | Texto principal |
-| 🔘 Gris | `#a0a0a0` | Texto secundario |
+```css
+/* 🎨 Cambiar colores de marca */
+:root {
+  --gold: #TU_COLOR;           /* Acentos principales */
+  --gold-light: #TU_COLOR_LIGHT; /* Gradientes hover */
+  --gold-glow: rgba(...);      /* Efectos de brillo */
+}
+
+/* 🖼️ Reemplazar logo */
+<!-- Buscar en HTML y actualizar src -->
+<img src="TU_URL_DE_LOGO.png" alt="Tu Marca">
+
+/* 🗺️ Actualizar ubicación */
+<!-- Reemplazar iframe de Google Maps -->
+<iframe src="TU_EMBED_URL" ... ></iframe>
+
+/* 💬 Cambiar número de WhatsApp -->
+<!-- Buscar "51977355999" y reemplazar en: -->
+- wa.me links
+- JavaScript: profPhone variable
+- Contact section
+```
 
 ---
 
-## 📄 Licencia
+## 📄 Metadatos & SEO
+
+```html
+<meta name="description" content="Barbería profesional en Andahuaylas...">
+<meta name="author" content="BerMatMods - Desarrollo Web">
+<meta name="google-site-verification" content="JG8_KsOCw2MKItELjrA7vFLxZwO_NQsJsUs1s6prI8A" />
+<link rel="icon" sizes="192x192" href="..."> <!-- PWA ready -->
+<title>La Magia Del Barbero | Kennedy Ramirez</title>
+```
+
+---
+
+## 🤝 Créditos & Licencia
 
 ```
-© 2026 La Magia Del Barbero - Todos los derechos reservados.
-Desarrollado con 💛 por BerMatMods - Desarrollo Web
+© 2026 La Magia Del Barbero — Todos los derechos reservados.
+🐺 Diseño y Desarrollo: BerMatMods - Desarrollo Web
+🔗 Portfolio: https://bermatmods.github.io/BerMat-Code/
+
+📜 Licencia: Uso exclusivo para el negocio "La Magia Del Barbero".
+   Prohibida la reproducción total o parcial sin autorización escrita.
 ```
 
 <p align="center">
   <a href="https://bermatmods.github.io/BerMat-Code/" target="_blank">
-    <img src="https://img.shields.io/badge/©_𖤍BERMA𝐓-CODE𖤍-gold?style=for-the-badge&logo=github&logoColor=white" alt="BerMatMods"/>
+    <img src="https://img.shields.io/badge/©_𖤍_BERMA𝐓-CODE_𖤍-gold?style=for-the-badge&logo=github&logoColor=white" alt="BerMatMods"/>
   </a>
 </p>
 
 ---
 
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Si deseas mejorar este proyecto:
-
-1. Fork el repositorio 🔱
-2. Crea tu rama de feature (`git checkout -b feature/AmazingFeature`) 🌿
-3. Commit tus cambios (`git commit -m 'Add: AmazingFeature'`) 💬
-4. Push a la rama (`git push origin feature/AmazingFeature`) 📤
-5. Abre un Pull Request 🔄
-
----
-
 <p align="center">
-  <strong>💈 La Magia Del Barbero | Transformando Estilos desde Andahuaylas 💈</strong>
+  <strong>🐺 La Magia Del Barbero | Forjando Estilo con Esencia 🐺</strong>
 </p>
 
 <p align="center">
