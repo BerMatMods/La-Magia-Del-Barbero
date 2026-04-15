@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="gold">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -20,17 +20,37 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <style>
     :root {
+      /* === TEMA DORADO (POR DEFECTO) === */
       --black: #050505;
       --black-card: #0f0f0f;
       --black-glass: rgba(15, 15, 15, 0.85);
-      --gold: #D4AF37;
-      --gold-light: #FFD700;
-      --gold-glow: rgba(212, 175, 55, 0.5);
-      --gold-soft: rgba(212, 175, 55, 0.12);
+      --primary: #D4AF37;
+      --primary-light: #FFD700;
+      --primary-glow: rgba(212, 175, 55, 0.5);
+      --primary-soft: rgba(212, 175, 55, 0.12);
       --white: #ffffff;
       --gray: #a0a0a0;
       --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      
+      /* Imágenes por tema */
+      --hero-bg: url('https://i.postimg.cc/Hs1LGmDV/1776171893e71a.png');
+      --footer-logo: url('https://i.postimg.cc/Z5Y5wLpy/Picsart-26-04-14-07-41-30-147.png');
+      --whatsapp-btn: url('https://i.postimg.cc/P5q8CH63/1776171122970-removebg-preview.png');
     }
+    
+    [data-theme="purple"] {
+      /* === TEMA MORADO === */
+      --primary: #9D00FF;
+      --primary-light: #B721FF;
+      --primary-glow: rgba(157, 0, 255, 0.5);
+      --primary-soft: rgba(157, 0, 255, 0.15);
+      
+      /* Imágenes por tema */
+      --hero-bg: url('https://i.postimg.cc/P53sYnZG/1776047178765.jpg=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      --footer-logo: url('https://i.postimg.cc/fL2GTwpx/Picsart-26-04-14-06-13-48-842.png');
+      --whatsapp-btn: url('https://i.postimg.cc/BvjbR0G4/1776047813118-removebg-preview-(2).png');
+    }
+    
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -40,17 +60,19 @@
       line-height: 1.6;
       font-size: 15px;
       overflow-x: hidden;
+      transition: var(--transition);
     }
     body::before {
       content: '';
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
       background: 
-        radial-gradient(ellipse at 20% 80%, var(--gold-soft) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, var(--gold-soft) 0%, transparent 50%);
+        radial-gradient(ellipse at 20% 80%, var(--primary-soft) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, var(--primary-soft) 0%, transparent 50%);
       pointer-events: none;
       z-index: -1;
       animation: gradientShift 15s ease infinite;
+      transition: var(--transition);
     }
     @keyframes gradientShift {
       0%, 100% { opacity: 1; }
@@ -76,15 +98,15 @@
       backdrop-filter: blur(25px);
       -webkit-backdrop-filter: blur(25px);
       padding: 15px 0;
-      border-bottom: 1px solid var(--gold);
-      box-shadow: 0 5px 40px var(--gold-glow);
+      border-bottom: 1px solid var(--primary);
+      box-shadow: 0 5px 40px var(--primary-glow);
       transition: var(--transition);
       will-change: transform, background;
     }
     header.scrolled {
       padding: 10px 0;
       background: rgba(15, 15, 15, 0.95);
-      box-shadow: 0 8px 50px var(--gold-glow);
+      box-shadow: 0 8px 50px var(--primary-glow);
     }
     nav {
       display: flex;
@@ -105,14 +127,16 @@
     .logo img {
       height: 42px;
       width: auto;
-      filter: drop-shadow(0 0 10px var(--gold-glow));
+      filter: drop-shadow(0 0 10px var(--primary-glow));
+      transition: var(--transition);
     }
     .logo span {
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-shadow: 0 0 20px var(--gold-glow);
+      text-shadow: 0 0 20px var(--primary-glow);
+      transition: var(--transition);
     }
     .nav-links {
       display: flex;
@@ -135,13 +159,13 @@
       position: absolute;
       bottom: 0; left: 0;
       width: 0; height: 2px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
       transition: var(--transition);
-      box-shadow: 0 0 10px var(--gold-glow);
+      box-shadow: 0 0 10px var(--primary-glow);
     }
     .nav-links a:hover {
-      color: var(--gold-light);
-      text-shadow: 0 0 15px var(--gold-glow);
+      color: var(--primary-light);
+      text-shadow: 0 0 15px var(--primary-glow);
     }
     .nav-links a:hover::before { width: 100%; }
     
@@ -150,7 +174,7 @@
       font-size: 1.5rem;
       color: var(--white);
       background: transparent;
-      border: 2px solid var(--gold);
+      border: 2px solid var(--primary);
       border-radius: 10px;
       padding: 8px 14px;
       cursor: pointer;
@@ -158,9 +182,9 @@
     }
     .mobile-toggle:hover,
     .mobile-toggle.active {
-      background: var(--gold);
+      background: var(--primary);
       color: var(--white) !important;
-      box-shadow: 0 0 25px var(--gold-glow);
+      box-shadow: 0 0 25px var(--primary-glow);
     }
     
     .hero {
@@ -171,7 +195,7 @@
       padding: 100px 0 60px;
       background: 
         linear-gradient(135deg, rgba(5,5,5,0.4) 0%, rgba(15,15,15,0.3) 100%),
-        url('https://i.postimg.cc/Hs1LGmDV/1776171893e71a.png');
+        var(--hero-bg);
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -179,6 +203,7 @@
       position: relative;
       overflow: hidden;
       will-change: transform;
+      transition: var(--transition);
     }
     .hero::after {
       content: '';
@@ -203,8 +228,8 @@
     .hero-badge {
       display: inline-block;
       padding: 8px 20px;
-      background: var(--gold-soft);
-      border: 1px solid var(--gold);
+      background: var(--primary-soft);
+      border: 1px solid var(--primary);
       border-radius: 30px;
       font-size: 0.85rem;
       font-weight: 600;
@@ -212,18 +237,34 @@
       letter-spacing: 2px;
       color: var(--white);
       margin-bottom: 25px;
-      box-shadow: 0 0 20px var(--gold-glow);
+      box-shadow: 0 0 20px var(--primary-glow);
       text-shadow: 0 0 15px rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: var(--transition);
+      user-select: none;
+    }
+    .hero-badge:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px var(--primary-glow);
+    }
+    .hero-badge::after {
+      content: '✞︎𝐂𝐚𝐦𝐛𝐢𝐚𝐫 𝐄𝐬𝐭𝐢𝐥𝐨✞︎';
+      display: block;
+      font-size: 0.7rem;
+      margin-top: 4px;
+      opacity: 0.8;
+      letter-spacing: 0.5px;
     }
     .hero h1 {
       font-size: 3.5rem;
       margin-bottom: 20px;
-      background: linear-gradient(135deg, var(--white) 0%, var(--gold-light) 100%);
+      background: linear-gradient(135deg, var(--white) 0%, var(--primary-light) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-shadow: 0 0 40px var(--gold-glow);
+      text-shadow: 0 0 40px var(--primary-glow);
       line-height: 1.1;
+      transition: var(--transition);
     }
     .hero p {
       font-size: 1.2rem;
@@ -240,7 +281,7 @@
       align-items: center;
       gap: 10px;
       padding: 14px 35px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
       color: var(--white);
       border: none;
       border-radius: 50px;
@@ -252,7 +293,7 @@
       cursor: pointer;
       text-decoration: none;
       transition: var(--transition);
-      box-shadow: 0 5px 25px var(--gold-glow);
+      box-shadow: 0 5px 25px var(--primary-glow);
       position: relative;
       overflow: hidden;
       will-change: transform;
@@ -268,7 +309,7 @@
     .btn:hover::before { left: 100%; }
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 40px var(--gold-glow);
+      box-shadow: 0 10px 40px var(--primary-glow);
     }
     
     section { padding: 80px 0; }
@@ -282,18 +323,20 @@
       display: block;
       width: 80px;
       height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
       margin: 20px auto 0;
       border-radius: 2px;
-      box-shadow: 0 0 15px var(--gold-glow);
+      box-shadow: 0 0 15px var(--primary-glow);
+      transition: var(--transition);
     }
     .section-header h2 {
       font-size: 2.2rem;
       text-transform: uppercase;
-      background: linear-gradient(135deg, var(--white), var(--gold-light));
+      background: linear-gradient(135deg, var(--white), var(--primary-light));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      transition: var(--transition);
     }
     .section-header p {
       color: var(--gray);
@@ -315,19 +358,22 @@
       position: relative;
       will-change: transform;
     }
+    [data-theme="purple"] .service-card {
+      border-color: rgba(157, 0, 255, 0.3);
+    }
     .service-card::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
       opacity: 0;
       transition: var(--transition);
     }
     .service-card:hover {
       transform: translateY(-8px);
-      border-color: var(--gold);
-      box-shadow: 0 20px 50px var(--gold-glow);
+      border-color: var(--primary);
+      box-shadow: 0 20px 50px var(--primary-glow);
     }
     .service-card:hover::before { opacity: 1; }
     .service-image {
@@ -356,9 +402,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 12px;
-      background: var(--gold-soft);
+      background: var(--primary-soft);
       border-radius: 10px;
       margin-bottom: 15px;
+      transition: var(--transition);
     }
     .service-time {
       display: flex;
@@ -368,13 +415,13 @@
       font-size: 0.85rem;
       font-weight: 600;
     }
-    .service-time i { color: var(--gold-light); }
+    .service-time i { color: var(--primary-light); }
     .service-price {
       font-family: 'Orbitron', sans-serif;
       font-weight: 700;
-      color: var(--gold-light);
+      color: var(--primary-light);
       font-size: 1.2rem;
-      text-shadow: 0 0 10px var(--gold-glow);
+      text-shadow: 0 0 10px var(--primary-glow);
     }
     .service-card .btn {
       width: 100%;
@@ -401,18 +448,22 @@
       flex-direction: column;
       will-change: transform;
     }
+    [data-theme="purple"] .professional-card {
+      border-color: rgba(157, 0, 255, 0.4);
+    }
     .professional-card:hover {
       transform: translateY(-10px);
-      border-color: var(--gold-light);
-      box-shadow: 0 25px 60px var(--gold-glow);
+      border-color: var(--primary-light);
+      box-shadow: 0 25px 60px var(--primary-glow);
     }
     .professional-image-wrapper {
       position: relative;
       width: 100%;
       aspect-ratio: 1/1;
       overflow: hidden;
-      border-bottom: 3px solid var(--gold);
-      background: linear-gradient(135deg, var(--gold-soft), transparent);
+      border-bottom: 3px solid var(--primary);
+      background: linear-gradient(135deg, var(--primary-soft), transparent);
+      transition: var(--transition);
     }
     .professional-image {
       width: 100%;
@@ -441,23 +492,25 @@
     .professional-body h3 {
       font-size: 1.4rem;
       margin-bottom: 5px;
-      background: linear-gradient(135deg, var(--white), var(--gold-light));
+      background: linear-gradient(135deg, var(--white), var(--primary-light));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      transition: var(--transition);
     }
     .specialty {
       display: inline-block;
       padding: 5px 15px;
-      background: var(--gold-soft);
-      border: 1px solid var(--gold);
+      background: var(--primary-soft);
+      border: 1px solid var(--primary);
       border-radius: 20px;
-      color: var(--gold-light);
+      color: var(--primary-light);
       font-size: 0.85rem;
       font-weight: 600;
       margin: 10px 0 15px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      transition: var(--transition);
     }
     .professional-body p {
       color: var(--gray);
@@ -481,8 +534,9 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at center, var(--gold-soft) 0%, transparent 70%);
+      background: radial-gradient(ellipse at center, var(--primary-soft) 0%, transparent 70%);
       pointer-events: none;
+      transition: var(--transition);
     }
     .booking-card {
       background: var(--black-glass);
@@ -490,23 +544,25 @@
       -webkit-backdrop-filter: blur(30px);
       border-radius: 25px;
       padding: 35px;
-      border: 1px solid var(--gold);
-      box-shadow: 0 0 60px var(--gold-glow);
+      border: 1px solid var(--primary);
+      box-shadow: 0 0 60px var(--primary-glow);
       max-width: 750px;
       margin: 0 auto;
       position: relative;
       z-index: 2;
       will-change: transform;
+      transition: var(--transition);
     }
     .booking-card h3 {
       text-align: center;
       font-size: 1.8rem;
       margin-bottom: 28px;
       text-transform: uppercase;
-      background: linear-gradient(135deg, var(--white), var(--gold-light));
+      background: linear-gradient(135deg, var(--white), var(--primary-light));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      transition: var(--transition);
     }
     .form-grid {
       display: grid;
@@ -517,10 +573,11 @@
       display: block;
       margin-bottom: 8px;
       font-weight: 600;
-      color: var(--gold-light);
+      color: var(--primary-light);
       text-transform: uppercase;
       font-size: 0.8rem;
       letter-spacing: 1px;
+      transition: var(--transition);
     }
     .form-control {
       width: 100%;
@@ -533,10 +590,13 @@
       font-size: 0.95rem;
       transition: var(--transition);
     }
+    [data-theme="purple"] .form-control {
+      border-color: rgba(157,0,255,0.4);
+    }
     .form-control:focus {
       outline: none;
-      border-color: var(--gold-light);
-      box-shadow: 0 0 20px var(--gold-glow);
+      border-color: var(--primary-light);
+      box-shadow: 0 0 20px var(--primary-glow);
       background: rgba(25,25,25,0.9);
     }
     .form-row {
@@ -545,11 +605,12 @@
       gap: 18px;
     }
     .booking-summary {
-      background: var(--gold-soft);
-      border: 1px solid var(--gold);
+      background: var(--primary-soft);
+      border: 1px solid var(--primary);
       border-radius: 15px;
       padding: 18px;
       margin: 22px 0;
+      transition: var(--transition);
     }
     .summary-item {
       display: flex;
@@ -558,10 +619,13 @@
       border-bottom: 1px dashed rgba(212,175,55,0.4);
       font-size: 0.95rem;
     }
+    [data-theme="purple"] .summary-item {
+      border-bottom-color: rgba(157,0,255,0.4);
+    }
     .summary-item:last-child {
       border-bottom: none;
       font-weight: 700;
-      color: var(--gold-light);
+      color: var(--primary-light);
       font-size: 1.1rem;
       font-family: 'Orbitron', sans-serif;
     }
@@ -581,7 +645,7 @@
     .confirmation-icon {
       width: 85px;
       height: 85px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -590,19 +654,24 @@
       font-size: 2.2rem;
       color: var(--white);
       animation: pulse 2s infinite;
-      box-shadow: 0 0 40px var(--gold-glow);
+      box-shadow: 0 0 40px var(--primary-glow);
+      transition: var(--transition);
     }
     @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 var(--gold-glow); }
+      0%, 100% { box-shadow: 0 0 0 0 var(--primary-glow); }
       50% { box-shadow: 0 0 0 25px rgba(212, 175, 55, 0); }
+    }
+    [data-theme="purple"] @keyframes pulse {
+      50% { box-shadow: 0 0 0 25px rgba(157, 0, 255, 0); }
     }
     .confirmation h3 {
       font-size: 1.6rem;
       margin-bottom: 16px;
-      background: linear-gradient(135deg, var(--white), var(--gold-light));
+      background: linear-gradient(135deg, var(--white), var(--primary-light));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      transition: var(--transition);
     }
     .confirmation p {
       color: var(--gray);
@@ -637,14 +706,15 @@
       box-shadow: 0 8px 35px rgba(37, 211, 102, 0.7);
     }
     .confirmation-note {
-      background: var(--gold-soft);
-      border-left: 4px solid var(--gold);
+      background: var(--primary-soft);
+      border-left: 4px solid var(--primary);
       padding: 14px 18px;
       margin: 22px 0;
       border-radius: 0 12px 12px 0;
       font-size: 0.9rem;
       color: var(--gray);
       text-align: left;
+      transition: var(--transition);
     }
     .btn-reset {
       background: transparent;
@@ -653,9 +723,9 @@
       margin-top: 12px;
     }
     .btn-reset:hover {
-      border-color: var(--gold-light);
-      color: var(--gold-light);
-      box-shadow: 0 0 20px var(--gold-glow);
+      border-color: var(--primary-light);
+      color: var(--primary-light);
+      box-shadow: 0 0 20px var(--primary-glow);
     }
     
     .location-section {
@@ -670,9 +740,10 @@
       border-radius: 20px;
       overflow: hidden;
       height: 320px;
-      border: 2px solid var(--gold);
-      box-shadow: 0 0 35px var(--gold-glow);
+      border: 2px solid var(--primary);
+      box-shadow: 0 0 35px var(--primary-glow);
       background: var(--black);
+      transition: var(--transition);
     }
     .map-frame iframe {
       width: 100%;
@@ -685,6 +756,10 @@
       border-radius: 20px;
       padding: 30px;
       border: 1px solid rgba(212,175,55,0.3);
+      transition: var(--transition);
+    }
+    [data-theme="purple"] .contact-panel {
+      border-color: rgba(157,0,255,0.3);
     }
     .contact-panel h3 {
       display: flex;
@@ -693,7 +768,8 @@
       margin-bottom: 22px;
       font-size: 1.4rem;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: var(--primary-light);
+      transition: var(--transition);
     }
     .contact-item {
       display: flex;
@@ -701,6 +777,10 @@
       margin: 18px 0;
       padding-bottom: 18px;
       border-bottom: 1px solid rgba(212,175,55,0.2);
+      transition: var(--transition);
+    }
+    [data-theme="purple"] .contact-item {
+      border-bottom-color: rgba(157,0,255,0.2);
     }
     .contact-item:last-child {
       margin-bottom: 0;
@@ -713,20 +793,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--gold-soft);
-      border: 1px solid var(--gold);
+      background: var(--primary-soft);
+      border: 1px solid var(--primary);
       border-radius: 14px;
-      color: var(--gold-light);
+      color: var(--primary-light);
       font-size: 1.2rem;
       flex-shrink: 0;
+      transition: var(--transition);
     }
     .contact-item strong {
       display: block;
       margin-bottom: 5px;
       text-transform: uppercase;
       font-size: 0.8rem;
-      color: var(--gold-light);
+      color: var(--primary-light);
       letter-spacing: 1px;
+      transition: var(--transition);
     }
     .contact-item p,
     .contact-item a {
@@ -736,15 +818,16 @@
       font-size: 1rem;
     }
     .contact-item a:hover {
-      color: var(--gold-light);
+      color: var(--primary-light);
     }
     
     footer {
       background: var(--black);
       padding: 50px 0 25px;
-      border-top: 1px solid var(--gold);
+      border-top: 1px solid var(--primary);
       text-align: center;
       position: relative;
+      transition: var(--transition);
     }
     footer::before {
       content: '';
@@ -753,7 +836,8 @@
       transform: translateX(-50%);
       width: 200px;
       height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      transition: var(--transition);
     }
     .footer-logo {
       margin-bottom: 30px;
@@ -762,8 +846,9 @@
       height: 140px;
       width: auto;
       max-width: 100%;
-      filter: drop-shadow(0 0 20px var(--gold-glow));
+      filter: drop-shadow(0 0 20px var(--primary-glow));
       object-fit: contain;
+      transition: var(--transition);
     }
     .social-bar {
       display: flex;
@@ -781,7 +866,7 @@
       border-radius: 18px;
       background: var(--black-card);
       border: 2px solid rgba(212,175,55,0.4);
-      color: var(--gold-light);
+      color: var(--primary-light);
       font-size: 1.4rem;
       text-decoration: none;
       transition: var(--transition);
@@ -789,18 +874,21 @@
       overflow: hidden;
       will-change: transform;
     }
+    [data-theme="purple"] .social-btn {
+      border-color: rgba(157,0,255,0.4);
+    }
     .social-btn::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
       opacity: 0;
       transition: var(--transition);
     }
     .social-btn:hover {
       transform: translateY(-6px) scale(1.05);
-      border-color: var(--gold-light);
-      box-shadow: 0 10px 35px var(--gold-glow);
+      border-color: var(--primary-light);
+      box-shadow: 0 10px 35px var(--primary-glow);
     }
     .social-btn:hover::before { opacity: 1; }
     .social-btn:hover i {
@@ -816,13 +904,13 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
     .copyright a {
-      color: var(--gold-light);
+      color: var(--primary-light);
       font-weight: 600;
       text-decoration: none;
       transition: var(--transition);
     }
     .copyright a:hover {
-      text-shadow: 0 0 15px var(--gold-glow);
+      text-shadow: 0 0 15px var(--primary-glow);
     }
     
     .whatsapp-float {
@@ -884,15 +972,16 @@
     }
     .modal-box {
       background: var(--black-card);
-      border: 2px solid var(--gold);
+      border: 2px solid var(--primary);
       border-radius: 25px;
       padding: 35px;
       max-width: 480px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 25px 70px var(--gold-glow);
+      box-shadow: 0 25px 70px var(--primary-glow);
       animation: modalPop 0.35s ease;
       position: relative;
+      transition: var(--transition);
     }
     @keyframes modalPop {
       from { opacity: 0; transform: scale(0.9) translateY(20px); }
@@ -911,6 +1000,7 @@
       color: white;
       box-shadow: 0 10px 30px rgba(255, 56, 56, 0.5);
       animation: warningPulse 1.5s infinite;
+      transition: var(--transition);
     }
     @keyframes warningPulse {
       0% { box-shadow: 0 0 0 0 rgba(255, 56, 56, 0.7); }
@@ -919,9 +1009,10 @@
     }
     .modal-title {
       font-size: 1.5rem;
-      color: var(--gold-light);
+      color: var(--primary-light);
       margin-bottom: 14px;
       text-transform: uppercase;
+      transition: var(--transition);
     }
     .modal-text {
       color: var(--gray);
@@ -930,7 +1021,7 @@
       line-height: 1.6;
     }
     .modal-btn {
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
       color: white;
       border: none;
       padding: 14px 40px;
@@ -944,11 +1035,11 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      box-shadow: 0 5px 25px var(--gold-glow);
+      box-shadow: 0 5px 25px var(--primary-glow);
     }
     .modal-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 40px var(--gold-glow);
+      box-shadow: 0 10px 40px var(--primary-glow);
     }
     .modal-close {
       position: absolute;
@@ -968,9 +1059,9 @@
       justify-content: center;
     }
     .modal-close:hover {
-      background: var(--gold);
+      background: var(--primary);
       color: white;
-      box-shadow: 0 0 20px var(--gold-glow);
+      box-shadow: 0 0 20px var(--primary-glow);
     }
     
     @media (max-width: 768px) {
@@ -987,7 +1078,7 @@
         transform: translateY(-150%);
         transition: var(--transition);
         z-index: 999;
-        border-bottom: 1px solid var(--gold);
+        border-bottom: 1px solid var(--primary);
       }
       .nav-links.active { transform: translateY(0); }
       .hero h1 { font-size: 2.3rem; }
@@ -1022,7 +1113,12 @@
       transform: translateZ(0);
       backface-visibility: hidden;
     }
-</style>
+    
+    /* === ANIMACIÓN DE TRANSICIÓN DE TEMA === */
+    html[data-theme-transition] * {
+      transition: var(--transition) !important;
+    }
+  </style>
 </head>
 <body>
   <header id="mainHeader">
@@ -1049,7 +1145,7 @@
   <section id="inicio" class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge">💈𝗕𝗮𝗿𝗯𝗲𝗿 𝗦𝗵𝗼𝗽💈</div>
+        <div class="hero-badge" id="themeToggle" title="Clic para cambiar tema">💈𝗕𝗮𝗿𝗯𝗲𝗿 𝗦𝗵𝗼𝗽💈</div>
         <h1>La Magia Del Barbero</h1>
         <p>Cortes de alta precisión, barba escultural y experiencias únicas en Andahuaylas. Donde el estilo encuentra su esencia.</p>
         <a href="#servicios" class="btn">
@@ -1097,7 +1193,7 @@
           </div>
         </div>
 
-        <div class="service-card" style="border-color: var(--gold-light);">
+        <div class="service-card" style="border-color: var(--primary-light);">
           <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800" alt="Corte Premium" class="service-image">
           <div class="service-content">
             <h3>Corte Premium</h3>
@@ -1414,7 +1510,7 @@
   <footer>
     <div class="container">
       <div class="footer-logo">
-        <img src="https://i.postimg.cc/Z5Y5wLpy/Picsart-26-04-14-07-41-30-147.png" alt="La Magia Del Barbero - Logo Neón">
+        <img id="footerLogo" src="https://i.postimg.cc/Z5Y5wLpy/Picsart-26-04-14-07-41-30-147.png" alt="La Magia Del Barbero - Logo Neón">
       </div>
       
       <div class="social-bar">
@@ -1431,13 +1527,13 @@
       
       <div class="copyright">
         &copy; <span id="year"></span> La Magia Del Barbero - Todos los derechos reservados<br>
-        <a href="https://bermatmods.github.io/BerMat-Code/" target="_blank">© 𖤍BERMA𝐓-CODE𖤍</a>
+        <a href="https://bermatmods.github.io/BerMat-Code/" target="_blank">© BERMA𝐓-CODE𖤍</a>
       </div>
     </div>
   </footer>
 
   <a href="https://wa.me/51977355999" class="whatsapp-float" target="_blank">
-    <img src="https://i.postimg.cc/P5q8CH63/1776171122970-removebg-preview.png alt="WhatsApp">
+    <img id="whatsappImg" src="https://i.postimg.cc/P5q8CH63/1776171122970-removebg-preview.png" alt="WhatsApp">
   </a>
 
   <div class="modal" id="warningModal">
@@ -1455,6 +1551,61 @@
   </div>
 
   <script>
+    // === CONFIGURACIÓN DE TEMA ===
+    const themeToggle = document.getElementById('themeToggle');
+    const footerLogo = document.getElementById('footerLogo');
+    const whatsappImg = document.getElementById('whatsappImg');
+    const htmlEl = document.documentElement;
+    
+    // Cargar tema guardado o usar dorado por defecto
+    const savedTheme = localStorage.getItem('barberTheme') || 'gold';
+    htmlEl.setAttribute('data-theme', savedTheme);
+    updateThemeImages(savedTheme);
+    
+    // Función para actualizar imágenes según tema
+    function updateThemeImages(theme) {
+      if (theme === 'purple') {
+        footerLogo.src = 'https://i.postimg.cc/fL2GTwpx/Picsart-26-04-14-06-13-48-842.png';
+        whatsappImg.src = 'https://i.postimg.cc/BvjbR0G4/1776047813118-removebg-preview-(2).png';
+      } else {
+        footerLogo.src = 'https://i.postimg.cc/Z5Y5wLpy/Picsart-26-04-14-07-41-30-147.png';
+        whatsappImg.src = 'https://i.postimg.cc/P5q8CH63/1776171122970-removebg-preview.png';
+      }
+    }
+    
+    // Toggle de tema al hacer clic en el badge
+    themeToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Animación de transición suave
+      htmlEl.setAttribute('data-theme-transition', 'true');
+      
+      const currentTheme = htmlEl.getAttribute('data-theme');
+      const newTheme = currentTheme === 'gold' ? 'purple' : 'gold';
+      
+      // Actualizar atributo y guardar preferencia
+      htmlEl.setAttribute('data-theme', newTheme);
+      localStorage.setItem('barberTheme', newTheme);
+      
+      // Actualizar imágenes
+      updateThemeImages(newTheme);
+      
+      // Efecto visual de feedback
+      themeToggle.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        themeToggle.style.transform = '';
+        htmlEl.removeAttribute('data-theme-transition');
+      }, 300);
+      
+      // Mensaje de confirmación sutil
+      const originalText = themeToggle.innerHTML;
+      themeToggle.innerHTML = newTheme === 'purple' ? '💈𝗕𝗮𝗿𝗯𝗲𝗿 𝗦𝗵𝗼𝗽💈' : '💈𝗕𝗮𝗿𝗯𝗲𝗿 𝗦𝗵𝗼𝗽💈';
+      setTimeout(() => {
+        themeToggle.innerHTML = originalText;
+      }, 1500);
+    });
+    
+    // === RESTO DEL CÓDIGO ORIGINAL ===
     document.getElementById('year').textContent = new Date().getFullYear();
     
     // Optimización de scroll para evitar lag
@@ -1508,7 +1659,6 @@
         document.getElementById('sumService').textContent = serviceName.toUpperCase();
         document.getElementById('sumProfessional').textContent = profName.toUpperCase();
         
-        // ✅ CORRECCIÓN DE FECHA: Parseo manual para evitar timezone
         const [year, month, day] = date.split('-');
         const dateObj = new Date(year, month - 1, day);
         document.getElementById('sumDate').textContent = dateObj.toLocaleDateString('es-PE', {
@@ -1570,7 +1720,6 @@
       const [serviceName, price] = service.split('|');
       const [profName, profPhone, professionalTitle] = professional.split('|');
       
-      // ✅ CORRECCIÓN DE FECHA: Parseo manual para evitar timezone
       const [year, month, day] = date.split('-');
       const dateObj = new Date(year, month - 1, day);
       const dateFormatted = dateObj.toLocaleDateString('es-PE', { 
@@ -1580,7 +1729,6 @@
         day: 'numeric' 
       }).toUpperCase();
       
-      // Formato EXACTO solicitado por el usuario
       const separator = '━━━━━━━━━━━━━━━━━━━━━━';
       const message = `💈 *¡NUEVA RESERVA CONFIRMADA!* 💈 \n${separator}\n📋 *SERVICIO:* ${serviceName.toUpperCase()}\n💰 *PRECIO:* S/ ${price}\n\n${separator}\n✂️ *${professionalTitle}:* ${profName.toUpperCase()}\n\n${separator}\n📅 *FECHA:* ${dateFormatted}\n⏰ *HORA:* ${time}\n\n${separator}\n👤 *CLIENTE:* ${name.toUpperCase()}\n📱 *TELÉFONO:* ${phone}\n${email ? `📧 *EMAIL:* ${email}\n` : ''}\n${separator}\n✨ *¡Muchas gracias estaré puntual!* ✨`;
       
