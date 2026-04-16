@@ -1,7 +1,7 @@
 <h1 align="center">💈 LA MAGIA DEL BARBERO 💈</h1>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/BerMatMods/La-Magia-Del-Barbero/main/logo-web.png" width="320"/>
+  <img src="[https://raw.githubusercontent.com/BerMatMods/La-Magia-Del-Barbero/main/logo-web.png](https://raw.githubusercontent.com/BerMatMods/La-Magia-Del-Barbero/main/logo%20de%20la%20barber%C3%ADa.jpg)" width="320"/>
 </p>
 
 <p align="center">
