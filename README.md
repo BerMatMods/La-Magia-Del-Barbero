@@ -1,8 +1,8 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/BerMatMods/La-Magia-Del-Barbero/main/logo-web.png" width="260"/>
-</p>
-
 <h1 align="center">💈 LA MAGIA DEL BARBERO 💈</h1>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/BerMatMods/La-Magia-Del-Barbero/main/logo-web.png" width="320"/>
+</p>
 
 <p align="center">
   ✂️ Sistema web profesional para barbería ✂️ <br>
@@ -44,14 +44,6 @@
 
 ---
 
-## 📸 VISTA PREVIA DEL SISTEMA
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/BerMatMods/La-Magia-Del-Barbero/main/logo-web.png" width="90%"/>
-</p>
-
----
-
 ## ⚙️ FUNCIONAMIENTO
 
 📌 Flujo del usuario:
@@ -71,9 +63,7 @@
 ## 🛠️ TECNOLOGÍAS
 
 <p align="center">
-
-<img src="https://skillicons.dev/icons?i=html,css,js" />
-
+  <img src="https://skillicons.dev/icons?i=html,css,js" />
 </p>
 
 ---
